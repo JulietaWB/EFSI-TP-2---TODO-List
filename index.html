@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css" asp-append-version="true" />
 </head>
 <body>
-    
+    <input type="text" name="nuevoItem" id="input" placeholder="Escribí tu próxima tarea acá">
+    <input type="button" name="boton" value="Agregar tarea" id="boton">
+
+    <div id="lista">
+        <li class="list-group-item">
+            <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+            <label class="form-check-label" for="firstCheckbox" id="txtCheckbox" ></label>
+            <p id="fechaCreado"></p>
+            <p id="fechaCheck"></p>
+        </li>
+    </div>
+
+    <script src="js/codigo.js"> </script>
 </body>
 </html>
