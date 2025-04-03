@@ -1,33 +1,40 @@
-class Item 
-{
-    txt;
-    check;
-    fechaCreado;
-    fechaCheck;
-
-    constructor (txt, check, fechaCreado, fechaCheck)    {
-        this.txt=txt;
-        this.check=check;
-        this.fechaCreado=fechaCreado;
-        this.fechaCheck=fechaCheck;
+let tareas = [
+    {
+        id:0,
+        tarea: "ejemplo",
+        chequeado: true,
+        fechaCreado: "2025-03-01",
+        fechaChequeado: "2025-03-01"
     }
+];
+let id=0;
+const agregar = () => {
+    let tarea = document.getElementById("input").value;
+    id++;
+    tareas.push({
+        id:id,
+        tarea: tarea,
+        chequeado: false,
+        fechaCreado: new Date().toLocaleString(),
+        fechaChequeado:""
+    });
+
+    mostrarEnPantalla();
 }
 
-let array;
-const txtCheckbox= document.getElementById("txtCheckbox");
-const fecha1Checkbox= document.getElementById("fechaCreado");
-const fecha2Checkbox= document.getElementById("fechaCheck");
-
-
-//CREAR NUEVO ITEM Y AGREGARLO AL ARRAY
-boton.onclick = () => {
-    const txtItem = document.getElementById("input").value;
-
-    const item1= new Item(txtItem, false, Date.now(), 0);
-
-    array.push(item1);
-
-    
-    txtCheckbox.innerHtml= "kk";
+const mostrarEnPantalla = () => {
+    document.getElementById("listado").innerHTML ="";
+    tareas.forEach(p => {
+        document.getElementById("listado").innerHTML += `<li><input ${p.chequeado ? "checked" : "" } type="checkbox" onclick="checkear(${p.id})"> ${p.tarea} - Creado: ${p.fechaCreado} - Chequeado: ${p.fechaChequeado}</li>`;
+    });
 }
 
+const checkear = (id) => {
+    if(tareas[id].chequeado==true)
+    {tareas[id].chequeado=false }
+    else
+    {tareas[id].chequeado=true}
+    tareas[id].fechaChequeado= new Date().toLocaleString();
+}
+
+mostrarEnPantalla();
