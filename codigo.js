@@ -3,7 +3,7 @@ let tareas = [
         id:0,
         tarea: "ejemplo",
         chequeado: true,
-        fechaCreado: "2025-03-01",
+        fechaCreado: "2020-03-01",
         fechaChequeado: "2025-03-01"
     }
 ];
@@ -38,3 +38,23 @@ const checkear = (id) => {
 }
 
 mostrarEnPantalla();
+
+const compararTiempo=() => {
+
+    let tiempoMin= Number.MAX_VALUE;
+    let nombreTiempoMin= "";
+     
+
+    tareas.forEach(p => {
+        let tiempoP = Date.parse(p.fechaChequeado) - Date.parse(p.fechaCreado);
+        console.log(Date.parse(p.fechaChequeado) + ", " +  Date.parse(p.fechaCreado));
+        if (tiempoP < tiempoMin){
+            tiempoMin = tiempoP;
+            nombreTiempoMin = p.tarea; 
+            
+        }
+        
+    }    );
+
+    document.getElementById("infoTiempo").innerHTML = `Tiempo minimo logrado: ${tiempoMin/1000}s   ---  Tarea: ${nombreTiempoMin}`;
+}

@@ -1,0 +1,119 @@
+
+
+/* Fuente y fondo general */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Contenedor centrado */
+.container {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+}
+
+/* Título */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+/* Input y botón de agregar */
+.labelIngrese {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+input[type="text"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 60%;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.listadoBoton {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.listadoBoton:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo de listado */
+.listado {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+/* Cada ítem */
+.form-check {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eaeaea;
+    background-color: #fff;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+/* Checkbox estilo */
+.form-check-input {
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 2px solid #4caf50;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: #4caf50;
+    border-color: #4caf50;
+}
+
+/* Tarea completada */
+.form-check.completed .form-check-label {
+    text-decoration: line-through;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+/* Etiqueta de tarea */
+.form-check-label {
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/* Botón comparar */
+.botonComparar {
+    margin-top: 2rem;
+}
+
+.botonComparar button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+    background-color: white;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.botonComparar button:hover {
+    background-color: #007bff;
+    color: white;
+}
